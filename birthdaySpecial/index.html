@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta charset="UTF-8">
+		<title>Happiest Birthday Nilotpal❤️</title>
+		<link rel="stylesheet" type="text/css" href="./css/format.css">
+	</head>
+
+	<body style="margin:0px">
+		<audio src="music/music.mp3"></audio>
+		<canvas></canvas>
+		<div id="imgTxt">
+			<span id="Txt"></span> <br />
+			<span id="tmp"></span>
+			<img id="img" src="">
+		</div>
+		
+
+		<div id="heartTxt">
+			<input type="text" name="a" id="a" maxlength="4" class="code text-center">
+			
+			<span id="clickMe"></span>
+			<div id="heart">
+				<button id="button" onclick="durr(document.getElementById('a').value)"></button>
+			</div>
+		</div>
+		<div id="content">
+			<h2 id="together"> We have been together </h2>
+			<div id="timer">
+				<b id="d"></b> Days 
+				<b id="h"></b> Hours
+				<b id="m"></b> Minutes
+				<b id="s"></b> Seconds
+			</div>
+		</div>
+
+    	<div id = "typeDiv">
+        	<span id="txt1"></span> <br />
+        	<span id="txt2"></span>
+    	</div>		
+
+		<script >
+			var ok = 0;
+			var flag = 1;
+			var myImage = document.getElementById("img");
+			var myTxt = document.getElementById("Txt");
+			var imageArray = ["pic/pic1.jpeg","pic/pic2.jpeg", "pic/pic3.jpeg", "pic/pic4.jpeg", "pic/pic5.jpeg", "pic/pic6.jpeg", "pic/pic7.jpeg", "pic/pic8.jpeg", "pic/pic9.jpeg", "pic/pic10.jpeg", "pic/pic11.jpeg", "pic/pic12.jpeg", "pic/pic13.jpeg",
+			"pic/pic14.jpeg", "pic/pic15.jpeg", "pic/pic16.jpeg", "pic/pic17.jpeg", "pic/pic18.jpeg", "pic/pic19.jpeg", "pic/pic20.jpeg",
+			"pic/pic21.jpeg","pic/pic22.jpeg", "pic/pic23.jpeg","pic/pic24.jpeg","pic/pic25.jpeg","pic/pic26.jpeg","pic/pic27.jpeg","pic/pic28.jpeg",
+			"pic/pic29.jpeg","pic/pic30.jpg","pic/pic31.jpg","pic/pic32.jpg","pic/pic33.jpg","pic/pic34.jpg","pic/pic35.jpg","pic/pic36.jpg","pic/pic37.jpg","pic/pic38.jpeg"];
+			var imageIndex = 0;
+			var txtArray = ['Our first victory together: The most helping person ,Geeta gyan competition gifted me the real friend❤️','Bholi si shurat..aankho me masti-Remember the day? Teri full speech aur teri nigaahe aaj v ekdm yaad h..',
+			'Most chill person-You know how to fixup my sadu mood in all the cases...Haa wo baat alag h...abhi v poori tarike se ni aata🤣❤️','Pure aashik: Bharadwaj ji 2 hours traffic me faske 10 min ke liye milne aaye the Daandya nights me.You stole my heart😍😅',
+			'All time problem solver-Tekko shyd pata na h....but tu v mera all in one problem solver h..In every case I need you and tu solution dhund hi deta❤️🐒','Most Simplest person- The most attractive thing in you is your transperancy. The level of honesty you show ,multiplies my love and trust a million times🥺🤗','The most funniest guy: You know you are crazy...Still the same heart as a child...so truthful and innocent  😊','Most Carinng Husband: You know you are a husband material . I find myself so lucky to have you as my better-half.You not only love me...but also take me to the right direction 🥺❤️',
+			'You dont know and I dont want you to know that You are Damn hot🥵 and my loving Handsome husband😳😍','You are the Diamond of my life ,You treat me like a Queen❤️','Most transparent guy:Remember the pic? Tere operation se pehle mujhse chupke milne aana and with the prity you showed me your fear of operation🤗...',
+			'Darpok Nilu: Hehe Badi lag rhi thi naa🙈 aur tujhe laga mai college jake badal jaungi😂','Tera mujhse hai pehle ka Nata koi.. Yuhi nhi dil lubhata koi😊','Most Darmebaaz insaan: Incident to yaad hi hoga..Idiot😂❤️',
+			'Thrilling person:Class me baithke v meri yaad aa rhi thi aapko😳 Love those calls when you call me during your class hours','Perfect JIJU: Hehe mujje bhut acha lgta h jb tum meri family se milte ho...You show your concern towars them also..The sign of true human❤️','THe hardest days of life..your care and love that gave me the strength to face those difficulties.Can never repay you support👀👀👀',
+			'Relived the school memories .The best trip ever, You are my strength Pal..I always find myself confident on all those ways in which you are with me','Rotru Insaan,My little emotional boy:Sach me lekin tujhe v chorr ke jane ka mann ni krta🥺❤️',
+			"Craziest person:You are pure sathiyal....How can someone be so concerned abiut me....Abhi tk naye naye relationship jaisa hi krta h..like we r newly",'My cutiieee boy: You are soo cute..resembles same as a baby..Jiska pati cute..uska v bada naam h..pass me sula lo..bachhe ka ky kaam h..❤️❤️❤️',
+			'Jate smay senti hogya thaa naa...Haaye❤️❤️',"Wo din v kya mast the jb hum yuhi milne aa jaya krte the..",
+			'Oyee hoyee hero🤗','Cute Pose dene me to tm mere se aage hai😅',
+			'Mcdonalds me v flirt kr rha tha😅','Gussa kyu ho jata h yaar🥺','Ching-Chang Chuu😍😍😍',
+			'Tere saath 3 hours feel like Ye samay itti jldi kyu beeta🥺🤭','I guess pehli baar Park ko explore kiye the naa😅','Our kolkata journey--First wala,Ha wahi pehli mandir romance wala😍, uss smay tera mujje waise protect krna...You stole my heart again there 😍😍',
+			'You are my comfort zone...I feel no differnece between our presence❤️🐒',
+			'Gande ho tm...kitta mana kiya tha fir v giant wheel pe leke chale hi gye🙃--pr bhutt maza aaya tha...tune darr khatam krdiya tha🥺❤️','Tere sath har safar mujje immature aur bache jaisa feel karata..with no any worry, You make me complete...❤️','Thoda kam pyaar kiya kro smjhaa...Next birthday pe aajana milnee🥺🥺','You are the asmile of my face....Aise to bhut kharus hu mai....but its you jisne hasna seekhaya🥺❤️🤭','Haaaayyyeeee popluuuuu...You are my hunny bunny ....❤️🤭','Thanks for the gift naaptol..You taught me-Jinse aap pyaar krte ho wo dur hoke v pass hote h..ekdm karib🥺🥺Jldii aana..Janamdin Ki dher sari shubhkaamnaye ji❤️'];
+			var txtArray1 = ['Our first victory together: The most helping person ,Geeta gyan competition gifted me the real friend❤️','Bholi si shurat..aankho me masti-Remember the day? Teri full speech aur teri nigaahe aaj v ekdm yaad h..',
+			'Most chill person-You know how to fixup my sadu mood in all the cases...Haa wo baat alag h...abhi v poori tarike se ni aata🤣❤️','Aasli aashik: Bharadwaj ji 2 hours traffic me faske 10 min ke liye milne aaye the Dandya nights me.You stole my heart😍😅',
+			'All time problem solver-Tekko shyd pata na h....but tu v mera all in one problem solver h..In every case I need you and tu solution dhund hi deta❤️🐒','Most Simplest person- The most attractive thing in you is your transperancy. The level of honesty you show ,multiplies my love and trust a million times🥺🤗','The most funniest guy: You know you are crazy...Still the same heart as a child...so truthful and innocent  😊','Most Carinng Husband: You know you are a husband material . I find myself so lucky to have you as my better-half.You not only love me...but also take me to the right direction 🥺❤️',
+			'You dont know and I dont want you to know that You are Damn hot🥵 and my loving Handsome husband😳😍','You are the Diamond of my life ,You treat me like a Queen❤️','Most transparent guy:Remember the pic? Tere operation se pehle mujhse chupke milne aana and with the prity you showed me your fear of operation🤗...',
+			'Darpok Nilu: Hehe Badi lag rhi thi naa🙈 aur tujhe laga mai college jake badal jaungi😂','Tera mujhse hai pehle ka Nata koi.. Yuhi nhi dil lubhata koi😊','Most Darmebaaz insaan: Incident to yaad hi hoga..Idiot😂❤️',
+			'Thrilling person:Class me baithke v meri yaad aa rhi thi aapko😳 Love those calls when you call me during your class hours','Perfect JIJU: Hehe mujje bhut acha lgta h jb tum meri family se milte ho...You show your concern towars them also..The sign of true human❤️','THe hardest days of life..your care and love that gave me the strength to face those difficulties.Can never repay you support👀👀👀',
+			'Relived the school memories .The best trip ever, You are my strength Pal..I always find myself confident on all those ways in which you are with me','Rotru Insaan,My little emotional boy:Sach me lekin tujhe v chorr ke jane ka mann ni krta🥺❤️',
+			"Craziest person:You are pure sathiyal....How can someone be so concerned abiut me....Abhi tk naye naye relationship jaisa hi krta h..like we r newly",'My cutiieee boy: You are soo cute..resembles same as a baby..Jiska pati cute..uska v bada naam h..pass me sula lo..bachhe ka ky kaam h..❤️❤️❤️',
+			'Jate smay senti hogya thaa naa...Haaye❤️❤️',"Wo din v kya mast the jb hum yuhi milne aa jaya krte the..",
+			'Oyee hoyee hero🤗','Cute Pose dene me to tm mere se aage hai😅',
+			'Mcdonalds me v flirt kr rha tha😅','Gussa kyu ho jata h yaar🥺','Ching-Chang Chuu😍😍😍',
+			'Tere saath 3 hours feel like Ye samay itti jldi kyu beeta🥺🤭','I guess pehli baar Park ko explore kiye the naa😅','Our kolkata journey--First wala,Ha wahi pehli mandir romance wala😍, uss smay tera mujje waise protect krna...You stole my heart again there 😍😍',
+			'You are my comfort zone...I feel no difference between our presence❤️🐒',
+			'Gande ho tm...kitta mana kiya tha fir v giant wheel pe leke chale hi gye🙃--pr bhutt maza aaya tha...tune darr khatam krdiya tha🥺❤️','Tere sath har safar mujje immature aur bache jaisa feel karata..with no any worry, You make me complete...❤️','Thoda kam pyaar kiya kro smjhaa...Next birthday pe aajana milnee🥺🥺','You are the asmile of my face....Aise to bhut kharus hu mai....but its you jisne hasna seekhaya🥺❤️🤭','Haaaayyyeeee popluuuuu...You are my hunny bunny ....❤️🤭','Thanks for the gift naaptol..You taught me-Jinse aap pyaar krte ho wo dur hoke v pass hote h..ekdm karib🥺🥺Jldii aana..Janamdin Ki dher sari shubhkaamnaye ji❤️'];
+			 var len = imageArray.length;
+			var t = 0;
+		</script>
+		
+		<script type="text/javascript" src="./js/stars.js"></script>
+		<script type="text/javascript" src="./js/typeWriter.js"></script>
+		<script type="text/javascript" src="./js/date.js"></script>
+		<script type="text/javascript" src="./js/playImg.js"></script>
+	</body>
+</html>
